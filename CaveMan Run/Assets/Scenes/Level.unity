@@ -453,7 +453,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 5
-  laneDistance: 4
+  laneDistance: 2
+  jumpForce: 12
+  Gravity: -20
 --- !u!136 &2127589222
 CapsuleCollider:
   m_ObjectHideFlags: 0
