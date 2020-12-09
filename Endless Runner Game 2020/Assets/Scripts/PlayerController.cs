@@ -5,11 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator anim;
-    // Start is called before the first frame update
+    public static GameObject player;
+    public static GameObject currentPlatform;
+    
+    void OnCollisionEnter (Collision other)
+    {
+        currentPlatform = other.gameObject;
+    } 
+        
     void Start()
     {
         //Anim will ne null if no animator
         anim = this.GetComponent<Animator>();
+        player = this.gameObject; 
     }
     void StopJump()
     {

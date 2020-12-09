@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class GenerateWorld : MonoBehaviour
 {
-    public GameObject[] platforms ;
+    
+    GameObject dummyTraveller;
 
     void Start()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
+        dummyTraveller = new GameObject("dummy");
+        
         for (int i = 0; i < 20; i++)
         {
-            int plateformNumber = Random.Range(0, platforms.Length);
-            GameObject p = Instantiate(platforms[plateformNumber], pos, Quaternion.identity);
             
+            GameObject p =Pool.singleton.GetRandom();
+            if (p == null) return;
 
-            if (platforms[plateformNumber].tag == "stairsUp")
+            p.SetActive(true);
+            p.transform.position = dummyTraveller.transform.position;
+            p.transform.rotation = dummyTraveller.transform.rotation;
+
+
+            if (p.tag == "stairsUp")
             {
-                pos.y += 5;
+                dummyTraveller.transform.Translate(0, 5, 0);
             }
-            if (platforms[plateformNumber].tag == "stairsDown")
+            if (p.tag == "stairsDown")
             {
-                pos.y -= 5;
+                dummyTraveller.transform.Translate(0, -5, 0);
                 p.transform.Rotate(new Vector3(0, 180, 0));
-                p.transform.position = pos;
+                p.transform.position = dummyTraveller.transform.position;
             }
-            pos.z -= 10;
+            else if (p.tag == "platformTSection")
+            {
+                //Adding tile to right turn
+                if(Random.Range(0, 2)==0)
+                dummyTraveller.transform.Rotate(new Vector3(0, 90, 0));
+                else //Adding tile to left turn
+                    dummyTraveller.transform.Rotate(new Vector3(0, -90, 0));
+                dummyTraveller.transform.Translate(Vector3.forward * -10);
+            }
+            dummyTraveller.transform.Translate(Vector3.forward * -10);
         } 
     }
 }
