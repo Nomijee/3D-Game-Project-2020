@@ -278,6 +278,8 @@ GameObject:
   - component: {fileID: -8827346968159332843}
   - component: {fileID: 8519823525354713098}
   - component: {fileID: -6640066487413659058}
+  - component: {fileID: -8830263385047836717}
+  - component: {fileID: 5715555920899329444}
   m_Layer: 0
   m_Name: platformTSection
   m_TagString: platformTSection
@@ -362,8 +364,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.93, z: 4.87}
-  m_Center: {x: 3.25, y: 0.91, z: 0}
+  m_Size: {x: 1, y: 8.66, z: 4.87}
+  m_Center: {x: 3.25, y: 3.24, z: 0}
 --- !u!65 &-6640066487413659058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -375,8 +377,33 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.93, z: 4.87}
-  m_Center: {x: -3.25, y: 0.91, z: 0}
+  m_Size: {x: 1, y: 8.68, z: 4.87}
+  m_Center: {x: -3.25, y: 3.85, z: 0}
+--- !u!114 &-8830263385047836717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889116941559472207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528012c679ff2d64cae3f548331f128b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &5715555920899329444
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889116941559472207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.13
+  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!1 &5889116941559472209
 GameObject:
   m_ObjectHideFlags: 0

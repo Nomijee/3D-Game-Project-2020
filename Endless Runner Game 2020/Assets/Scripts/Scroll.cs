@@ -7,6 +7,7 @@ public class Scroll : MonoBehaviour
 {
     void FixedUpdate()
     {
+        if (PlayerController.isDead) return;
         this.transform.position += PlayerController.player.transform.forward * -0.1f;
         if (PlayerController.currentPlatform == null) return;
         //stairs upward 
@@ -17,3 +18,4 @@ public class Scroll : MonoBehaviour
             this.transform.Translate(0, 0.06f, 0);
     }
 }
+ 

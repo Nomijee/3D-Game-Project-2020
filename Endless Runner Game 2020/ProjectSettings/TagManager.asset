@@ -10,6 +10,11 @@ TagManager:
   - platformZsplit
   - platformTSection
   - stairsDown
+  - Fire
+  - platformZFire
+  - Wall
+  - Spell
+  - platformZWall
   layers:
   - Default
   - TransparentFX

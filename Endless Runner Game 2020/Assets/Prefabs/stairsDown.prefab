@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 8582747561325470625}
   - component: {fileID: 1577712485789005280}
   - component: {fileID: -1378409526675766439}
+  - component: {fileID: 6562284952808944142}
   m_Layer: 0
   m_Name: stairsDown
   m_TagString: stairsDown
@@ -1710,8 +1711,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.09, y: 2.45, z: 1.11}
-  m_Center: {x: 0, y: 1.17, z: 4.68}
+  m_Size: {x: 5.09, y: 4.21, z: 1.11}
+  m_Center: {x: 0, y: 2.5, z: 4.68}
+--- !u!114 &6562284952808944142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026697141326126621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528012c679ff2d64cae3f548331f128b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7029376804848797316
 GameObject:
   m_ObjectHideFlags: 0

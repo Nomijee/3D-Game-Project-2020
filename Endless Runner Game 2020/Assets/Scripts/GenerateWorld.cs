@@ -5,44 +5,50 @@ using UnityEngine;
 public class GenerateWorld : MonoBehaviour
 {
     
-    GameObject dummyTraveller;
+    public static GameObject dummyTraveller;
+    public static GameObject lastPlatform;
 
-    void Start()
+    void Awake()
     {
         dummyTraveller = new GameObject("dummy");
-        
-        for (int i = 0; i < 20; i++)
-        {
-            
-            GameObject p =Pool.singleton.GetRandom();
-            if (p == null) return;
-
-            p.SetActive(true);
-            p.transform.position = dummyTraveller.transform.position;
-            p.transform.rotation = dummyTraveller.transform.rotation;
-
-
-            if (p.tag == "stairsUp")
-            {
-                dummyTraveller.transform.Translate(0, 5, 0);
-            }
-            if (p.tag == "stairsDown")
-            {
-                dummyTraveller.transform.Translate(0, -5, 0);
-                p.transform.Rotate(new Vector3(0, 180, 0));
-                p.transform.position = dummyTraveller.transform.position;
-            }
-            else if (p.tag == "platformTSection")
-            {
-                //Adding tile to right turn
-                if(Random.Range(0, 2)==0)
-                dummyTraveller.transform.Rotate(new Vector3(0, 90, 0));
-                else //Adding tile to left turn
-                    dummyTraveller.transform.Rotate(new Vector3(0, -90, 0));
-                dummyTraveller.transform.Translate(Vector3.forward * -10);
-            }
-            dummyTraveller.transform.Translate(Vector3.forward * -10);
-        } 
     }
+        
+//method get called by PlayerController because it knows which platform its on 
+    public static void RunDummy()
+    {
+        GameObject p = Pool.singleton.GetRandom();
+        //check if sucessfull getting an object
+        if (p == null) return;
+        if (lastPlatform != null)
+        {
+            if (lastPlatform.tag == "platformTSection")
+            dummyTraveller.transform.position = lastPlatform.transform.position +
+                //moving forward 
+                PlayerController.player.transform.forward * 20;
+            else 
+            dummyTraveller.transform.position = lastPlatform.transform.position +
+                PlayerController.player.transform.forward * 10;
+
+            if (lastPlatform.tag == "stairsUp")
+            dummyTraveller.transform.Translate(0, 5, 0);
+
+        }
+
+        lastPlatform = p;
+        p.SetActive(true);
+        p.transform.position = dummyTraveller.transform.position;
+        p.transform.rotation = dummyTraveller.transform.rotation;
+
+        if(p.tag == "stairsDown")
+        {
+            dummyTraveller.transform.Translate(0, -5, 0);
+            //rotate stairs 
+            p.transform.Rotate(0, 180, 0);
+            p.transform.position = dummyTraveller.transform.position;
+
+        }
+
+    } 
+    
 }
    

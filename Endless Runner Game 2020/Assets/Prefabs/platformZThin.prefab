@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 5186698625144701702}
   - component: {fileID: 4466724405989192566}
   - component: {fileID: -4862883319960411080}
+  - component: {fileID: 2102779231788184790}
   m_Layer: 0
   m_Name: platformZThin
   m_TagString: platformZThin
@@ -478,8 +479,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.25, y: 1, z: 1.15}
-  m_Center: {x: 0, y: 0.99, z: -4.42}
+  m_Size: {x: 2.25, y: 4.32, z: 1.15}
+  m_Center: {x: 0, y: 1.69, z: -4.42}
+--- !u!114 &2102779231788184790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3414831671586391064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528012c679ff2d64cae3f548331f128b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3414831671586391066
 GameObject:
   m_ObjectHideFlags: 0
