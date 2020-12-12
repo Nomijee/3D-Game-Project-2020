@@ -288,11 +288,11 @@ GameObject:
   - component: {fileID: 235764842}
   m_Layer: 5
   m_Name: StatsPanel
-  m_TagString: Untagged
+  m_TagString: subpanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &235764841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,18 +300,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235764840}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 524680031}
   - {fileID: 810020381}
-  m_Father: {fileID: 858405750}
-  m_RootOrder: 3
+  m_Father: {fileID: 1333953017}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 439.53998}
   m_SizeDelta: {x: 884, y: 1863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235764842
@@ -506,11 +506,11 @@ GameObject:
   - component: {fileID: 429023977}
   m_Layer: 5
   m_Name: HelpPanel
-  m_TagString: Untagged
+  m_TagString: subpanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &429023976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -518,18 +518,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429023975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1636989708}
   - {fileID: 47715767}
-  m_Father: {fileID: 858405750}
-  m_RootOrder: 2
+  m_Father: {fileID: 685645463}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 710.46}
   m_SizeDelta: {x: 884, y: 1863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429023977
@@ -741,11 +741,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2130889304}
-        m_MethodName: CloseHelpPanel
-        m_Mode: 1
+        m_MethodName: ClosePanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 524680032}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 685645464}
   m_Layer: 5
   m_Name: HelpButton
-  m_TagString: Untagged
+  m_TagString: mmbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,6 +818,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 802501962}
+  - {fileID: 429023976}
   m_Father: {fileID: 825396164}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -870,11 +871,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2130889304}
-        m_MethodName: OpenHelpPanel
-        m_Mode: 1
+        m_MethodName: OpenPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 685645464}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1138,8 +1139,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Help \nUse Arrow Key to  Turn\nUse SpaceBar to Jump\nUsed 'M' key for break
-    wall"
+  m_Text: Statistics
 --- !u!222 &810020383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1343,9 +1343,6 @@ RectTransform:
   m_Children:
   - {fileID: 982052120}
   - {fileID: 825396164}
-  - {fileID: 429023976}
-  - {fileID: 235764841}
-  - {fileID: 2116050807}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1524,7 +1521,7 @@ GameObject:
   - component: {fileID: 1298474971}
   m_Layer: 5
   m_Name: OptionsButton
-  m_TagString: Untagged
+  m_TagString: mmbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1541,6 +1538,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1305171037}
+  - {fileID: 2116050807}
   m_Father: {fileID: 825396164}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1591,7 +1589,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1298474972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2130889304}
+        m_MethodName: OpenPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1298474971}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1298474972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,7 +1728,7 @@ GameObject:
   - component: {fileID: 1333953018}
   m_Layer: 5
   m_Name: StatsButton
-  m_TagString: Untagged
+  m_TagString: mmbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1736,6 +1745,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 50889891}
+  - {fileID: 235764841}
   m_Father: {fileID: 825396164}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1786,7 +1796,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1333953019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2130889304}
+        m_MethodName: OpenPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1333953018}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1333953019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,7 +1858,7 @@ GameObject:
   - component: {fileID: 1404942948}
   m_Layer: 5
   m_Name: PlayButton
-  m_TagString: Untagged
+  m_TagString: mmbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2034,11 +2055,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2130889304}
-        m_MethodName: CloseHelpPanel
-        m_Mode: 1
+        m_MethodName: ClosePanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1636989709}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2148,8 +2169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Help \nUse Arrow Key to  Turn\nUse SpaceBar to Jump\nUsed 'M' key for break
-    wall"
+  m_Text: Options
 --- !u!222 &1711554523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2172,7 +2192,7 @@ GameObject:
   - component: {fileID: 1786896169}
   m_Layer: 5
   m_Name: QuitButton
-  m_TagString: Untagged
+  m_TagString: mmbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2300,11 +2320,11 @@ GameObject:
   - component: {fileID: 2116050808}
   m_Layer: 5
   m_Name: OptionPanel
-  m_TagString: Untagged
+  m_TagString: subpanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2116050807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2312,18 +2332,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116050806}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2136811381}
   - {fileID: 1711554521}
-  m_Father: {fileID: 858405750}
-  m_RootOrder: 4
+  m_Father: {fileID: 1298474970}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 575}
   m_SizeDelta: {x: 884, y: 1863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116050808
@@ -2391,7 +2411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a56680c54f751c4c8563f917577c7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpPanel: {fileID: 429023975}
 --- !u!4 &2130889305
 Transform:
   m_ObjectHideFlags: 0
@@ -2488,11 +2507,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2130889304}
-        m_MethodName: CloseHelpPanel
-        m_Mode: 1
+        m_MethodName: ClosePanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2136811382}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
