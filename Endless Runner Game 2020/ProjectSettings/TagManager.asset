@@ -17,6 +17,7 @@ TagManager:
   - platformZWall
   - mmbutton
   - subpanel
+  - gamedata
   layers:
   - Default
   - TransparentFX
