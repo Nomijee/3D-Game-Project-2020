@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,17 +17,50 @@ public class PlayerController : MonoBehaviour
     public GameObject magic;
     public Transform magicStartPos;
     Rigidbody mRb;
-    
+
+    int livesLeft;
+    public Texture aliveIcon;
+    public Texture deadIcon;
+    public RawImage[] icons;
+
+    public GameObject gameOverPanel;
+
+    public Text highScore;
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene("Platforms", LoadSceneMode.Single);
+    }
     void OnCollisionEnter (Collision other)
     {
-       if (other.gameObject.tag =="Fire" || other.gameObject.tag == "Wall")
+       if ((other.gameObject.tag =="Fire" || other.gameObject.tag == "Wall") && !isDead)
         {
             anim.SetTrigger("isDead");
             isDead = true;
+            livesLeft-- ;  
+            PlayerPrefs.SetInt("lives", livesLeft);
+
+            if (livesLeft > 0)
+                Invoke("RestartGame", 1);
+            else
+            {
+                icons[0].texture = deadIcon; 
+                gameOverPanel.SetActive(true);
+
+                PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
+                if (PlayerPrefs.HasKey("highscore"))
+                {
+                    int hs = PlayerPrefs.GetInt("highscore");
+                    if (hs < PlayerPrefs.GetInt("score"))
+                        PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
+                }
+                else
+                    PlayerPrefs.SetInt("highscore", PlayerPrefs.GetInt("score"));
+            } 
         }
        else 
         currentPlatform = other.gameObject;
-    } 
+    }  
         
     void Start()
     {
@@ -37,6 +72,20 @@ public class PlayerController : MonoBehaviour
         player = this.gameObject;
         startPosition = player.transform.position;
         GenerateWorld.RunDummy();
+
+        if (PlayerPrefs.HasKey("highscore")) 
+             highScore.text = "High Score :" + PlayerPrefs.GetInt("highscore");
+       else
+            highScore.text = "High Score :0";
+         
+        isDead = false;
+        livesLeft = PlayerPrefs.GetInt("lives");
+
+        for (int i = 0; i < icons.Length; i++)
+        {
+            if (i >=livesLeft)
+                icons[i].texture = deadIcon;
+        }
     }
 
     //method to cast magic spell

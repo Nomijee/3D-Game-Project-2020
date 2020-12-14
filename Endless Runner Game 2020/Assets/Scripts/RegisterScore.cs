@@ -8,6 +8,7 @@ public class RegisterScore : MonoBehaviour
     void Start()
     {
          GameData.singleton.scoreText = this.GetComponent<Text>();
+        GameData.singleton.UpdateScore(0);
     }
 
     

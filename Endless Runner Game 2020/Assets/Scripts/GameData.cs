@@ -18,10 +18,13 @@ public class GameData : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
         singleton = this;
+
+        PlayerPrefs.SetInt("score", 0);
     }
     public void UpdateScore(int s) 
     {
         score += s;
+        PlayerPrefs.SetInt("score", score); 
         if (scoreText != null)
             scoreText.text = "Score " + score;
 
