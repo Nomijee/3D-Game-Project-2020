@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         magic.transform.position = magicStartPos.position;
         magic.SetActive(true);
-        mRb.AddForce(this.transform.forward * 4000);
+        mRb.AddForce(this.transform.forward * 500);
         //deactive magic after spell
         Invoke("KillMagic", 1);
     }
