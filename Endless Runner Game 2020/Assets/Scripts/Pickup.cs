@@ -5,7 +5,8 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     MeshRenderer[] mrs;
-    private void Start() 
+
+    private void Start()   
     {
         mrs = this.GetComponentsInChildren<MeshRenderer>();
     }
@@ -15,6 +16,8 @@ public class Pickup : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
              GameData.singleton.UpdateScore(10);
+            PlayerController.sfx[2].Play();
+                 
             foreach (MeshRenderer m in mrs)
                 m.enabled = false;
         }

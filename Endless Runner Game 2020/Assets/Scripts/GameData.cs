@@ -8,7 +8,11 @@ public class GameData : MonoBehaviour
     public static GameData singleton;
     public Text scoreText = null; 
     int score = 0;
-     void Awake()
+    public GameObject musicSlider;
+    public GameObject soundSlider;
+
+
+    void Awake()
     {
         GameObject[] gd = GameObject.FindGameObjectsWithTag("gamedata");
          
@@ -19,15 +23,17 @@ public class GameData : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         singleton = this;
 
-        PlayerPrefs.SetInt("score", 0);
+        musicSlider.GetComponent<UpdateMusic>().Start();
+        soundSlider.GetComponent<UpdateSound>().Start();
+        ///////////////
+         PlayerPrefs.SetInt("score", 0);
     }
     public void UpdateScore(int s) 
     {
         score += s;
         PlayerPrefs.SetInt("score", score); 
         if (scoreText != null)
-            scoreText.text = "Score " + score;
-
+            scoreText.text = "Score " + score; 
     }
 
 }

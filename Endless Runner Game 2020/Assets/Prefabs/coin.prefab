@@ -88,7 +88,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8206141423861214584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.037129164, y: 1.25, z: 8.432123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d551c122b1e66c04387d12dae84011b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePrefab: {fileID: 5201026424699569046, guid: bd3c6794bc5bb86449948d40197fa659,
+    type: 3}
 --- !u!95 &8206141423861214587
 Animator:
   serializedVersion: 3

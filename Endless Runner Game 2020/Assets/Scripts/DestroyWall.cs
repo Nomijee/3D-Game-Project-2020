@@ -47,6 +47,8 @@ public class DestroyWall : MonoBehaviour
             foreach (Rigidbody r in bricksRBs)
             //for physics system will take over 
                 r.isKinematic = false;
+
+            PlayerController.sfx[6].Play();
             
                 
         }

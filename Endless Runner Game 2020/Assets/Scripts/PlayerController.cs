@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     public static GameObject player;
     public static GameObject currentPlatform;
+    public static AudioSource[] sfx;
+
     bool canTurn = false;
     Vector3 startPosition;
     public static bool isDead = false; 
@@ -33,10 +35,12 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionEnter (Collision other)
     {
+        //player dead
        if ((other.gameObject.tag =="Fire" || other.gameObject.tag == "Wall") && !isDead)
         {
             anim.SetTrigger("isDead");
             isDead = true;
+            sfx[7].Play();
             livesLeft-- ;  
             PlayerPrefs.SetInt("lives", livesLeft);
 
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
         anim = this.GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody>();
         mRb = magic.GetComponent<Rigidbody>();
+        sfx = GameObject.FindWithTag("gamedata").GetComponentsInChildren<AudioSource>();
 
         player = this.gameObject;
         startPosition = player.transform.position;
@@ -96,12 +101,27 @@ public class PlayerController : MonoBehaviour
         mRb.AddForce(this.transform.forward * 500);
         //deactive magic after spell
         Invoke("KillMagic", 1);
+        
     }
     //method to kill magic
     void KillMagic()
     {
         magic.SetActive(false);
     }
+    void PlayMagic()
+    {
+        sfx[8].Play(); 
+
+    }
+    void FootStep1()
+    {
+        sfx[5].Play();    
+    }
+    void FootStep2()
+    {
+        sfx[4].Play();
+    }
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -131,7 +151,8 @@ public class PlayerController : MonoBehaviour
         if  (Input.GetKeyDown(KeyCode.Space)&& anim.GetBool("isMagic") == false)
         {
             anim.SetBool("isJumping", true);
-            rb.AddForce(Vector3.up * 200);   
+            rb.AddForce(Vector3.up * 200);
+            sfx[3].Play();
         }
         else if (Input.GetKeyDown(KeyCode.M) && anim.GetBool("isJumping") == false)
         {
