@@ -35,6 +35,17 @@ public class MainMenuController : MonoBehaviour
         PlayerPrefs.SetInt("lives", maxLives);
         SceneManager.LoadScene("Platforms", LoadSceneMode.Single);
     }
+    public void LoadMulti1Scene()
+    {
+        PlayerPrefs.SetInt("lives", maxLives);
+        SceneManager.LoadScene("PlatformsMulti1", LoadSceneMode.Single);
+    }
+    public void LoadMulti2Scene()
+    {
+        PlayerPrefs.SetInt("lives", maxLives);
+        GameData.singleton.score = 0;
+        SceneManager.LoadScene("PlatformsMulti2", LoadSceneMode.Single);
+    }
     public void QuitGame()
         {
             Application.Quit();

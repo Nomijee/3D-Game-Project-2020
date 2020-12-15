@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 342978945}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -42,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -83,6 +84,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
+--- !u!114 &342978945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffeff051464f824884af20c10af1eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level2sky: {fileID: 2100000, guid: e980bc7fbb00dc34b86b95ac842d1920, type: 2}
+  level3Sky: {fileID: 2100000, guid: b8f20d5ca50d16143afc11f5e4af6fc1, type: 2}
+  level2Text: {fileID: 0}
+  level3Text: {fileID: 0}
 --- !u!1 &518108526291201313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1228,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magic: {fileID: 0}
   magicStartPos: {fileID: 518108526291693871}
+  aliveIcon: {fileID: 2800000, guid: 3fd38f1a09d816348a9bdb2a51c20712, type: 3}
+  deadIcon: {fileID: 2800000, guid: c5e1fa616f51af845983873c6ff10d37, type: 3}
+  icons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  highScore: {fileID: 0}
 --- !u!54 &1107812172
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
 {
     public static GameData singleton;
     public Text scoreText = null; 
-    int score = 0;
+    public int score = 0;
     public GameObject musicSlider;
     public GameObject soundSlider;
 
@@ -34,6 +34,7 @@ public class GameData : MonoBehaviour
         PlayerPrefs.SetInt("score", score); 
         if (scoreText != null)
             scoreText.text = "Score " + score; 
+
     }
 
 }
