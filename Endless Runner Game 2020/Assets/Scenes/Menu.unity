@@ -259,14 +259,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 195
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Help \nUse Arrow Key to  Turn\nUse SpaceBar to Jump\nUsed 'M' key for break
-    wall"
+  m_Text: "How To Play \nuse arraow keys to turn on T sections\nuse A and D keys to
+    move left and right \nSpace bar to jump \nM key to break wall \nEnjoy the Game
+    \ "
 --- !u!222 &47715769
 CanvasRenderer:
   m_ObjectHideFlags: 0
